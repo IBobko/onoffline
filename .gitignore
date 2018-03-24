@@ -1,0 +1,15 @@
+#Ignore Intellij IDEA files
+.idea/
+out/
+*.iml
+
+#Ignore output files
+target/
+out/
+
+
+
+#Ignore rebel
+rebel.xml
+
+
