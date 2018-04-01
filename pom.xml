@@ -297,25 +297,12 @@
             <version>1.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.paypal.sdk</groupId>
-            <artifactId>rest-api-sdk</artifactId>
-            <version>LATEST</version>
-        </dependency>
-
         <!-- TestModule -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.10</version>
             <scope>test</scope>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.paypal.sdk</groupId>
-            <artifactId>adaptiveaccountssdk</artifactId>
-            <version>LATEST</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
