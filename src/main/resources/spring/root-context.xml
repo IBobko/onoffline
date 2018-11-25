@@ -3,43 +3,19 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:tx="http://www.springframework.org/schema/tx"
 		xmlns:context="http://www.springframework.org/schema/context"
-		xmlns:mvc="http://www.springframework.org/schema/mvc"
-		xmlns="http://www.springframework.org/schema/beans"
+        xmlns="http://www.springframework.org/schema/beans"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd"
 >
 
-	<!--<security:global-method-security-->
-	<!--pre-post-annotations="enabled" />-->
-
-	<!--<mvc:interceptors>-->
-	<!--<mvc:interceptor>-->
-	<!--<mvc:mapping path="/**" />-->
-	<!--<bean-->
-	<!--id="localeChangeInterceptor"-->
-	<!--class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">-->
-	<!--<property name="paramName" value="lang" />-->
-	<!--</bean>-->
-	<!--</mvc:interceptor>-->
-	<!--<mvc:interceptor>-->
-	<!--<mvc:mapping path="/auth/**"/>-->
-	<!--<bean class="ru.todo100.activer.interceptor.AuthInterceptor"/>-->
-	<!--</mvc:interceptor>-->
-	<!--<mvc:interceptor>-->
-	<!--<mvc:mapping path="/**"/>-->
-	<!--<bean class="ru.todo100.activer.interceptor.AttributesInterceptor"/>-->
-	<!--</mvc:interceptor>-->
-	<!--</mvc:interceptors>-->
-
-	<bean id="abstractMessageHandler" abstract="true" class="ru.todo100.activer.handler.AbstractMessageHandler"/>
+    <bean id="abstractMessageHandler" abstract="true" class="ru.todo100.activer.handler.AbstractMessageHandler"/>
 	<bean id="disputeHandler" class="ru.todo100.activer.handler.DisputeHandler" parent="abstractMessageHandler"/>
 	<bean id="flirtHandler" class="ru.todo100.activer.handler.FlirtHandler" parent="abstractMessageHandler"/>
 	<bean id="privateMessageHandler" class="ru.todo100.activer.handler.PrivateMessageHandler"
 				parent="abstractMessageHandler"/>
 
-	<import resource="security-context.xml" />
+
 
 	<context:property-placeholder location="local.properties" ignore-unresolvable="true" />
 	<context:property-placeholder location="servlet.properties" />
@@ -67,6 +43,7 @@
 		</property>
 	</bean>
 
+    <import resource="security-context.xml" />
 
 
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
@@ -153,7 +130,6 @@
 	</bean>
 
 	<bean id="referService" class="ru.todo100.activer.service.impl.ReferServiceImpl"/>
-	<bean id="payPalService" class="ru.todo100.activer.service.impl.PayPalServiceImpl"/>
 
 	<bean id="balanceService" class="ru.todo100.activer.service.impl.BalanceServiceImpl"/>
 	<bean id="notificationService" class="ru.todo100.activer.service.impl.NotificationServiceImpl"/>

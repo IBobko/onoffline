@@ -93,17 +93,7 @@ public class SettingPageController {
         model.addAttribute("photo", photoService1.getSizedPhoto(account.getId()));
 
         if (!model.containsAttribute("mainInfoForm")) {
-            final PayPalAccountForm payPalAccountForm = new PayPalAccountForm();
-//            mainInfoForm.setFirstName(account.getFirstName());
-//            mainInfoForm.setLastName(account.getLastName());
-//            mainInfoForm.setSex(account.getSex());
-//            mainInfoForm.setMaritalStatus(account.getMaritalStatus());
-//            mainInfoForm.setBirthDate(account.getBirthdate());
-//            if (account.getBirthdate() != null) {
-//                mainInfoForm.setBirthDate(account.getBirthdate());
-//            }
 
-            model.addAttribute("payPalForm", payPalAccountForm);
         }
 
         if (!model.containsAttribute("mainInfoForm")) {

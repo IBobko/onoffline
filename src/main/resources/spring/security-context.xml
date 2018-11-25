@@ -9,7 +9,6 @@
 
     <global-method-security pre-post-annotations="enabled"/>
 
-
     <!-- handler for authorization failure.  Will redirect to the login page. -->
     <beans:bean id="myAccessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
         <beans:property name="errorPage" value="/"/>
@@ -55,28 +54,5 @@
     <beans:bean id="authSuccessHandler" class="ru.todo100.activer.AuthSuccessHandler">
         <beans:property name="defaultTargetUrl" value="/profile"/>
     </beans:bean>
-
-
-
-    <!--<bean id="aclCache" class="org.springframework.security.acls.domain.EhCacheBasedAclCache">-->
-    <!--<constructor-arg>-->
-    <!--<bean class="org.springframework.cache.ehcache.EhCacheFactoryBean" p:cacheName="aclCache">-->
-    <!--<property name="cacheManager">-->
-    <!--<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"/>-->
-    <!--</property>-->
-    <!--</bean>-->
-    <!--</constructor-arg>-->
-    <!--</bean>-->
-    <!---->
-    <!---->
-
-    <!--<beans:bean class="org.springframework.security.acls.AclPermissionEvaluator" id="aclPermissionEvaluator">-->
-    <!--<beans:constructor-arg ref="jdbcMutableAclService" />-->
-    <!--</beans:bean>-->
-
-
-    <!--<beans:bean id="userDetailsService" class="ru.todo100.activer.service.impl.OnOffUserDetailsService">-->
-
-    <!--</beans:bean>-->
 
 </beans:beans>
